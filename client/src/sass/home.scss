@@ -1,0 +1,16 @@
+.home{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    place-items: center;
+
+    .range{
+        display: block;
+        width: 100%;
+    }
+
+    &__time{
+        color: #000;
+        font-size: 2rem;
+    }
+}

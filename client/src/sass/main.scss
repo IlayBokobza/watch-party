@@ -1,0 +1,52 @@
+@import "./player.scss";
+@import "./home.scss";
+@import "./button.scss";
+@import "./dialog.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+:root{
+    font-size: 62.5%; // 1rem = 10px
+    font-family: 'Fredoka', sans-serif;
+    color: #ffffff;
+
+    --color1:#222831;
+    --color2:#393E46;
+    --color3:#FFD369;
+    --color4:#EEEEEE;
+
+    --rt-color-dark: var(--color3);
+    --rt-color-white: #000;
+}
+
+body{
+    background-color: var(--color1);
+}
+
+
+video::-webkit-media-controls {
+    display:none !important;
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes fade-out {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+}

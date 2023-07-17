@@ -1,0 +1,123 @@
+.player__toolbar {
+  width: 100%;
+  background-color: var(--color3);
+  padding: 1.1rem 0;
+  display: flex;
+  justify-content: space-around; }
+
+.home {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-items: center; }
+  .home .range {
+    display: block;
+    width: 100%; }
+  .home__time {
+    color: #000;
+    font-size: 2rem; }
+
+.btn {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: .2rem solid #000;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  outline: none !important; }
+  .btn:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.25); }
+  .btn:active {
+    transform: translateY(0.1rem);
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25); }
+  .btn--round {
+    font-family: sans-serif;
+    border-radius: 50%;
+    font-size: 5rem;
+    width: 7rem;
+    height: 7rem;
+    position: relative; }
+    .btn--round .btn__text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+  .btn--color-1 {
+    background-color: var(--color1);
+    color: #fff; }
+  .btn--color-2 {
+    background-color: var(--color2);
+    color: #fff; }
+  .btn--color-3 {
+    background-color: var(--color3);
+    color: #000; }
+  .btn--color-4 {
+    background-color: var(--color4);
+    color: #000; }
+
+.dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  animation: fade-in .1s linear; }
+  .dialog--out {
+    animation: fade-out .11s linear; }
+  .dialog__container {
+    border-radius: .2rem;
+    width: 20%;
+    background-color: var(--color4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0; }
+  .dialog h1 {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 2rem; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400; }
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Fredoka', sans-serif;
+  color: #ffffff;
+  --color1:#222831;
+  --color2:#393E46;
+  --color3:#FFD369;
+  --color4:#EEEEEE;
+  --rt-color-dark: var(--color3);
+  --rt-color-white: #000; }
+
+body {
+  background-color: var(--color1); }
+
+video::-webkit-media-controls {
+  display: none !important; }
+
+@keyframes fade-in {
+  from {
+    opacity: 0%; }
+  to {
+    opacity: 100%; } }
+
+@keyframes fade-out {
+  from {
+    opacity: 100%; }
+  to {
+    opacity: 0%; } }

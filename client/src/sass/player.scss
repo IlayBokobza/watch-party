@@ -1,0 +1,10 @@
+.player{
+    
+    &__toolbar{
+        width: 100%;
+        background-color: var(--color3);
+        padding: 1.1rem 0;
+        display: flex;
+        justify-content: space-around;
+    }
+}
