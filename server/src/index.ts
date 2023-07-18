@@ -12,7 +12,11 @@ app.use('/',express.static('dist'))
 
 app.get('/movie',(req,res) => {
   
-  res.sendFile(process.env.MOVIE!)
+  if(/^http/.test(process.env.MOVIE!)){
+    res.redirect(process.env.MOVIE!)
+  }else{
+    res.sendFile(process.env.MOVIE!)
+  }
 })
 
 io.on("connection", (socket) => {
@@ -25,6 +29,7 @@ io.on("connection", (socket) => {
   })
 });
 
-httpServer.listen(80,() => {
-  console.log('Running on port 3000')
+const port = 3000
+httpServer.listen(port,() => {
+  console.log('Running on port ' + port)
 });

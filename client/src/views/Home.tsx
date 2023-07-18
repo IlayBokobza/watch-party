@@ -38,6 +38,11 @@ function App() {
     socket.emit("skip",time)
   }
 
+  function skipInSeconds(skip:number){
+    const time = playerRef.current!.currentTime
+    socket.emit("skip",time + skip)
+  }
+
   useEffect(() => {
     socket.player.unmute()
   },[])
@@ -52,6 +57,8 @@ function App() {
         <div className="player__toolbar">
           <Button icon onClick={() => runEvent("play")} text="play_arrow" color={1}/>
           <Button icon onClick={() => runEvent("pause")} text="pause" color={1}/>
+          <Button icon onClick={() => skipInSeconds(-10)} text="keyboard_double_arrow_left" color={1}/>
+          <Button icon onClick={() => skipInSeconds(10)} text="keyboard_double_arrow_right" color={1}/>
           <Button icon onClick={fullscreen} text="fullscreen" color={1}/>
           <span className="home__time" ref={timeRef}>0:0:0/0:0:0</span>
         </div>
