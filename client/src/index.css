@@ -16,6 +16,13 @@
   .home__time {
     color: #000;
     font-size: 2rem; }
+  .home .right {
+    display: flex;
+    flex-direction: column; }
+    .home .right .volume {
+      display: flex; }
+      .home .right .volume span {
+        color: #000; }
 
 .btn {
   font-family: 'Fredoka', sans-serif;

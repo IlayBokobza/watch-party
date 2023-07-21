@@ -13,4 +13,17 @@
         color: #000;
         font-size: 2rem;
     }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        
+        .volume{
+            display: flex;
+
+            span{
+                color: #000;
+            }
+        }
+    }
 }

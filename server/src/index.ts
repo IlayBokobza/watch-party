@@ -2,12 +2,14 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import express from 'express'
 import dotenv from 'dotenv'
+import cors from "cors";
 
 dotenv.config()
 const app = express()
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
+app.use(cors())
 app.use('/',express.static('dist'))
 
 app.get('/movie',(req,res) => {
@@ -29,7 +31,7 @@ io.on("connection", (socket) => {
   })
 });
 
-const port = 3000
+const port = process.env.PORT!
 httpServer.listen(port,() => {
   console.log('Running on port ' + port)
 });
